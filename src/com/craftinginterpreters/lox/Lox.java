@@ -70,6 +70,9 @@ public class Lox {
       System.out.println(token);
     }
 
+    final Parser parser = new Parser(tokens);
+    System.out.println(new AstPrinter().print(parser.parse()));
+    
     // Stop if there was a syntax error.
     if (hadError)
       return;

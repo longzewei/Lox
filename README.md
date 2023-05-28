@@ -14,3 +14,5 @@
     2. 同一个员工，需要它进行**不同的花活**（但都依托该员工原有的东西）
     3. 不同花活的背后是，员工原有的东西作为输入的不同的侧面产品
    
+
+/usr/bin/env /Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/weilongze/Desktop/java_etc/Lox/bin com.craftinginterpreters.lox.Lox
