@@ -1,0 +1,8 @@
+var breakfast = "sb";
+print breakfast; // 你是sb
+breakfast = "stupid";
+print breakfast; // 你是stupid
+
+@^&
+
+1 + 2;
