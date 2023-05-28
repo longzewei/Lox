@@ -18,4 +18,6 @@
 ## 计算表达式
     后序遍历ast
 
-/usr/bin/env /Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/weilongze/Desktop/java_etc/Lox/bin com.craftinginterpreters.lox.Lox
+/usr/bin/env /Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/weilongze/Desktop/java_etc/Lox/bin com.craftinginterpreters.lox.Lox 
+
+/usr/bin/env /Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/weilongze/Desktop/java_etc/Lox/bin com.craftinginterpreters.tool.GenerateAst /Users/weilongze/Desktop/java_etc/Lox/src/com/craftinginterpreters/lox

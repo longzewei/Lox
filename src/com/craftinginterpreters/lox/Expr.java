@@ -1,19 +1,19 @@
+//> Appendix II expr
 package com.craftinginterpreters.lox;
 
 import java.util.List;
 
 abstract class Expr {
-  // 定义接口的形态和命名空间？
   interface Visitor<R> {
     R visitBinaryExpr(Binary expr);
-
     R visitGroupingExpr(Grouping expr);
-
     R visitLiteralExpr(Literal expr);
-
     R visitUnaryExpr(Unary expr);
+    R visitVariableExpr(Variable expr);
   }
 
+  // Nested Expr classes here...
+//> expr-binary
   static class Binary extends Expr {
     Binary(Expr left, Token operator, Expr right) {
       this.left = left;
@@ -30,7 +30,8 @@ abstract class Expr {
     final Token operator;
     final Expr right;
   }
-
+//< expr-binary
+//> expr-grouping
   static class Grouping extends Expr {
     Grouping(Expr expression) {
       this.expression = expression;
@@ -43,7 +44,8 @@ abstract class Expr {
 
     final Expr expression;
   }
-
+//< expr-grouping
+//> expr-literal
   static class Literal extends Expr {
     Literal(Object value) {
       this.value = value;
@@ -56,7 +58,8 @@ abstract class Expr {
 
     final Object value;
   }
-
+//< expr-literal
+//> expr-unary
   static class Unary extends Expr {
     Unary(Token operator, Expr right) {
       this.operator = operator;
@@ -71,7 +74,22 @@ abstract class Expr {
     final Token operator;
     final Expr right;
   }
+//< expr-unary
+//> expr-variable
+  static class Variable extends Expr {
+    Variable(Token name) {
+      this.name = name;
+    }
 
-  // 子类的必须实现
+    @Override
+    <R> R accept(Visitor<R> visitor) {
+      return visitor.visitVariableExpr(this);
+    }
+
+    final Token name;
+  }
+//< expr-variable
+
   abstract <R> R accept(Visitor<R> visitor);
 }
+//< Appendix II expr

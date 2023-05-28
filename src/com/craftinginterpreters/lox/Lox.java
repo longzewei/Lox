@@ -80,13 +80,13 @@ public class Lox {
       return;
 
     Parser parser = new Parser(tokens);
-    Expr expression = parser.parse();
+    List<Stmt> statements = parser.parse();
+    // System.out.println("------");
+    // System.out.println("Parsing - Ast printer output:");
+    // System.out.println(new AstPrinter().print(expression));
     System.out.println("------");
-    System.out.println("Parsing - Ast printer output:");
-    System.out.println(new AstPrinter().print(expression));
-    System.out.println("------");
-    System.out.println("Execution - Expression interpreter output:");
-    interpreter.interpret(expression);
+    System.out.println("Execution - Statements interpreter output:");
+    interpreter.interpret(statements);
   }
 
   // < run
